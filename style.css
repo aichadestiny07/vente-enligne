@@ -1,0 +1,369 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+  --rose-clair: #f8d1dd;
+  --bleu-nuit: #1a2238;
+  --texte-blanc: #ffffff;
+  --gris-texte: #cccccc;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bleu-nuit); /* Fond bleu de nuit */
+  color: var(--rose-clair);           /* Texte rose clair */
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background-color: var(--bleu-nuit);
+  color: var(--rose-clair);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.logo h1 span {
+  color: var(--rose-clair); /* "LUXE" en rose clair */
+}
+
+.logo h1 {
+  color: var(--texte-blanc); /* "DESTINY" en blanc pour contraste */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu,
+.actions {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu a,
+.actions a {
+  text-decoration: none;
+  color: var(--rose-clair);
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+  background-color: var(--rose-clair);
+  color: var(--bleu-nuit);
+}
+
+.login_btn {
+  border: 1px solid var(--rose-clair);
+}
+
+.login_btn:hover {
+  background-color: var(--rose-clair);
+  color: var(--bleu-nuit);
+}
+
+/* SECTION ACCUEIL */
+.accueil {
+  background-color: var(--bleu-nuit);
+  color: var(--rose-clair);
+  padding: 100px 30px;
+  text-align: center;
+}
+
+.accueil h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.accueil p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.accueil .btn {
+  background-color: var(--rose-clair);
+  color: var(--bleu-nuit);
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.accueil .btn:hover {
+  background-color: #ffffff;
+  color: var(--bleu-nuit);
+}
+
+/* PRESENTATION */
+.presentation {
+  padding: 60px 30px;
+  background-color: var(--bleu-nuit);
+  border-left: 5px solid var(--rose-clair);
+  max-width: 900px;
+  margin: auto;
+}
+
+.presentation h2 {
+  color: var(--rose-clair);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.presentation p {
+  font-size: 17px;
+  margin-bottom: 15px;
+  color: var(--rose-clair);
+}
+
+/* SECTION PARFUM */
+.parfum {
+  padding: 60px 20px;
+  background-color: var(--bleu-nuit);
+  text-align: center;
+  color: var(--rose-clair);
+}
+
+.titre-parfums {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: var(--rose-clair);
+}
+
+.parfum h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--rose-clair);
+}
+
+.parfum h3 {
+  color: var(--gris-texte);
+  margin-bottom: 20px;
+}
+
+.parfum a {
+  color: var(--rose-clair);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.parfum img {
+  margin-top: 25px;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* GRILLE DE PARFUMS */
+.parfum-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding: 40px 30px;
+  justify-items: center;
+  background-color: var(--bleu-nuit);
+}
+
+/* CARTE INDIVIDUELLE DE PARFUM */
+.parfum-card {
+  background-color: #222845;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  color: var(--rose-clair);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.parfum-card:hover {
+  transform: scale(1.05);
+}
+
+.parfum-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* NOM ET PRIX */
+.parfum-card span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* PRIX SPÉCIFIQUE */
+.parfum-card .prix {
+  color: var(--gris-texte);
+  font-size: 16px;
+}
+
+/* BOUTON PANIER */
+.parfum-card .btn {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: var(--rose-clair);
+  color: var(--bleu-nuit);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.parfum-card .btn:hover {
+  background-color: #ffffff;
+  color: var(--bleu-nuit);
+}
+ /* MENU RESPONSIVE */
+
+/* Cacher le menu et actions par défaut sur petits écrans */
+@media (max-width: 768px) {
+  nav {
+    position: relative;
+  }
+
+  /* Bouton hamburger */
+  .menu,
+  .actions {
+    display: none;
+    flex-direction: column;
+    background-color: var(--bleu-nuit);
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    width: 200px;
+    border: 1px solid var(--rose-clair);
+    border-radius: 10px;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  .menu.show,
+  .actions.show {
+    display: flex;
+  }
+
+  /* Styles des liens en mode mobile */
+  .menu li,
+  .actions li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menu a,
+  .actions a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  /* Bouton hamburger style */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: relative;
+  }
+
+  .hamburger span {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: var(--rose-clair);
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  .hamburger span:nth-child(1) {
+    top: 0;
+  }
+
+  .hamburger span:nth-child(2) {
+    top: 9px;
+  }
+
+  .hamburger span:nth-child(3) {
+    top: 18px;
+  }
+
+  /* Ajuster header flex pour inclure hamburger */
+  header {
+    padding: 15px 20px;
+  }
+}
+
+/* SECTION ET CONTENUS */
+
+/* Ajustements généraux pour écrans <= 768px */
+@media (max-width: 768px) {
+  .accueil {
+    padding: 60px 20px;
+  }
+
+  .presentation,
+  .parfum-grid,
+  .parfum-card {
+    padding: 20px;
+  }
+
+  .parfum-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .parfum-card img {
+    height: 250px;
+  }
+}
+
+/* Pour très petits écrans (mobiles petits) */
+@media (max-width: 400px) {
+  .logo h1 {
+    font-size: 22px;
+  }
+
+  .accueil h1 {
+    font-size: 28px;
+  }
+}
+
+
+
+
+/* FOOTER */
+footer {
+  background-color: var(--bleu-nuit);
+  color: var(--rose-clair);
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
