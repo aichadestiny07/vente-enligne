@@ -24,6 +24,11 @@
         <li><a href="panier.html">🛒</a></li>
       </ul>
     </nav>
+    <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
   </header>
 
   <div class="login-container">
@@ -45,7 +50,13 @@
 
       <button type="submit">S'inscrire</button>
     </form>
-
+<script>
+  document.getElementById('inscriptionForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    alert("Inscription réussie !");
+    this.reset();
+  })
+</script>
     <p class="signup-link">Déjà un compte ? 
       <a href="connexion.html">Se connecter</a>
     </p>

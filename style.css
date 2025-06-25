@@ -243,121 +243,65 @@ nav {
   background-color: #ffffff;
   color: var(--bleu-nuit);
 }
- /* MENU RESPONSIVE */
+.arrow {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
 
-/* Cacher le menu et actions par défaut sur petits écrans */
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--rose-clair);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* MENU RESPONSIVE */
 @media (max-width: 768px) {
   nav {
-    position: relative;
-  }
-
-  /* Bouton hamburger */
-  .menu,
-  .actions {
-    display: none;
-    flex-direction: column;
-    background-color: var(--bleu-nuit);
     position: absolute;
-    top: 60px;
-    right: 30px;
-    width: 200px;
-    border: 1px solid var(--rose-clair);
-    border-radius: 10px;
-    padding: 10px 0;
+    top: 70px;
+    right: 0;
+    background-color: var(--bleu-nuit);
+    width: 100%;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
     z-index: 1000;
   }
 
-  .menu.show,
-  .actions.show {
+  nav.active {
+    transform: translateY(0);
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 15px;
+  }
+
+  .hamburger {
     display: flex;
   }
-
-  /* Styles des liens en mode mobile */
-  .menu li,
-  .actions li {
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  .menu a,
-  .actions a {
-    display: block;
-    padding: 10px 0;
-  }
-
-  /* Bouton hamburger style */
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    width: 30px;
-    height: 22px;
-    position: relative;
-  }
-
-  .hamburger span {
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: var(--rose-clair);
-    border-radius: 2px;
-    transition: 0.3s;
-  }
-
-  .hamburger span:nth-child(1) {
-    top: 0;
-  }
-
-  .hamburger span:nth-child(2) {
-    top: 9px;
-  }
-
-  .hamburger span:nth-child(3) {
-    top: 18px;
-  }
-
-  /* Ajuster header flex pour inclure hamburger */
-  header {
-    padding: 15px 20px;
-  }
 }
-
-/* SECTION ET CONTENUS */
-
-/* Ajustements généraux pour écrans <= 768px */
-@media (max-width: 768px) {
-  .accueil {
-    padding: 60px 20px;
-  }
-
-  .presentation,
-  .parfum-grid,
-  .parfum-card {
-    padding: 20px;
-  }
-
-  .parfum-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .parfum-card img {
-    height: 250px;
-  }
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
 }
-
-/* Pour très petits écrans (mobiles petits) */
-@media (max-width: 400px) {
-  .logo h1 {
-    font-size: 22px;
-  }
-
-  .accueil h1 {
-    font-size: 28px;
-  }
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
 }
-
-
-
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
 
 /* FOOTER */
 footer {
