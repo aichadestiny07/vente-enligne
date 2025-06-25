@@ -33,18 +33,25 @@
     <section class="hero">
     <h2>Contactez-nous</h2>
     <p>Vous avez une question ? Écrivez-nous !</p>
-    <form>
-      <label for="nom">Nom :</label><br>
-      <input type="text" id="nom" name="nom"><br><br>
+    <div class="form-wrapper">
+  <form id="contact-form">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom">
 
-      <label for="email">Email :</label><br>
-      <input type="email" id="email" name="email"><br><br>
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email">
 
-      <label for="message">Message :</label><br>
-      <textarea id="message" name="message" rows="4"></textarea><br><br>
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" rows="4"></textarea>
 
-      <button type="submit">Envoyer</button>
-    </form>
+    <button type="submit">Envoyer</button>
+
+    <p id="confirmation-message" style="display: none; margin-top: 15px; color: var(--rose-clair); font-weight: bold;">
+      Message envoyé !
+    </p>
+  </form>
+</div>
+
   </section>
   <section class="social-contact">
   <h3>Autres moyens de contact</h3>
@@ -62,5 +69,6 @@
   <footer>
     <p>&copy; DBSE-ONLINE 2025- Tous droits réservés.</p>
   </footer>
+  <script src="script.js"></script>
     </body>
 </html>

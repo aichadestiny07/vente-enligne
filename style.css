@@ -248,60 +248,153 @@ nav {
   margin-left: 5px;
   transition: transform 0.3s ease;
 }
-/* HAMBURGER */
-.hamburger {
-  display: none;
+
+/* STYLE DU FORMULAIRE */
+.login-container form {
+  display: flex;
   flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  z-index: 1001;
+  gap: 15px;
+  background-color: #222845;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 400px;
 }
 
-.hamburger span {
-  width: 25px;
-  height: 3px;
+.login-container label {
+  text-align: center;
+  font-weight: bold;
+  color: var(--rose-clair);
+}
+
+.login-container input {
+  padding: 10px;
+  border: 1px solid var(--rose-clair);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--rose-clair);
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: #ffffff;
+}
+
+/* BOUTON DE CONNEXION */
+.login-container button {
   background-color: var(--rose-clair);
-  border-radius: 2px;
-  transition: all 0.3s ease;
+  color: var(--bleu-nuit);
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* MENU RESPONSIVE */
-@media (max-width: 768px) {
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: var(--bleu-nuit);
-    width: 100%;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-  }
+.login-container button:hover {
+  background-color: #ffffff;
+  color: var(--bleu-nuit);
+}
 
-  nav.active {
-    transform: translateY(0);
-  }
+/* LIEN VERS INSCRIPTION */
+.signup-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
 
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    gap: 15px;
-  }
+.signup-link a {
+  color: var(--rose-clair);
+  text-decoration: underline;
+}
 
-  .hamburger {
-    display: flex;
-  }
+/* SECTION HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: var(--bleu-nuit);
+  color: var(--rose-clair);
 }
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
+
+/* TITRE EN HAUT DE PAGE */
+.hero h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-align: center;
+  color: var(--rose-clair);
 }
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
+
+.hero p {
+  text-align: center;
+  color: var(--gris-texte);
+  margin-bottom: 30px;
 }
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
+
+/* CONTENEUR DU FORMULAIRE */
+.form-wrapper {
+  background-color: #1f2645;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
 }
+
+/* FORMULAIRE */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+form input,
+form textarea {
+  padding: 12px;
+  border: 1px solid var(--rose-clair);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--rose-clair);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--rose-clair);
+  color: var(--bleu-nuit);
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: #fff;
+  color: var(--bleu-nuit);
+}
+/* CENTRER LA PAGE DE CONNEXION / INSCRIPTION */
+main.login-container,
+div.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centre horizontalement */
+  justify-content: center; /* centre verticalement */
+  min-height: 100vh;       /* prend toute la hauteur */
+}
+
 
 /* FOOTER */
 footer {
