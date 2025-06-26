@@ -399,6 +399,69 @@ div.login-container {
 }
 
 
+
+/* style.css */
+
+/* ------------------------------------------- */
+/* --- STYLE PERSONNALISÉ BLEU NUIT & ROSE --- */
+/* ------------------------------------------- */
+
+/* Couleur de fond de la barre de navigation */
+.navbar {
+  background-color: #0A192F; /* Un beau "bleu de nuit" foncé */
+}
+
+/* Couleur du texte pour le logo et les liens principaux */
+.navbar .navbar-brand,
+.navbar .nav-link {
+  color: #FFD1DC; /* Rose clair */
+}
+
+/* Couleur du texte quand on passe la souris sur un lien ou qu'il est actif */
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
+  color: #FFFFFF; /* On peut le rendre blanc pour un meilleur contraste au survol */
+}
+
+/* Style du menu déroulant */
+.dropdown-menu {
+  background-color: #0A192F; /* Fond bleu nuit aussi pour le menu déroulant */
+  border: 1px solid #FFD1DC;   /* Optionnel : une petite bordure rose */
+}
+
+/* Style des liens à l'intérieur du menu déroulant */
+.dropdown-item {
+  color: #FFD1DC; /* Texte en rose clair */
+}
+
+/* Couleur au survol d'un élément du menu déroulant */
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: #0A192F; /* Texte en bleu nuit pour bien le voir */
+  background-color: #FFD1DC; /* Fond en rose clair */
+}
+
+/* Pour que l'icône du menu hamburger soit bien visible (normalement géré par navbar-dark, mais c'est une sécurité) */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 209, 220, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+
+/* --- Optionnel : Adapter le bouton LOGIN au nouveau style --- */
+.btn-primary {
+  background-color: #FFD1DC; /* Fond rose clair */
+  border-color: #FFD1DC; /* Bordure rose clair */
+  color: #0A192F; /* Texte en bleu nuit */
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #FFFFFF; /* Fond blanc au survol */
+  border-color: #FFFFFF;
+  color: #0A192F;
+}
+
 /* FOOTER */
 footer {
   background-color: var(--bleu-nuit);
