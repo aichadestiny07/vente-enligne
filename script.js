@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
             messageConnexion.textContent = 'Vous êtes connecté !';
             messageConnexion.style.color = 'green'; // Optionnel: change la couleur pour le succès
             // Ici, vous pouvez rediriger l'utilisateur ou effectuer d'autres actions après une connexion réussie
+            alert('L"Vous êtes connecté avec succès');
             window.location.href = 'panier.html';
         } else {
             messageConnexion.textContent = 'Adresse e-mail ou mot de passe incorrect.';
