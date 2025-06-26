@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             messageConnexion.textContent = 'Adresse e-mail ou mot de passe incorrect.';
             messageConnexion.style.color = 'red'; // Optionnel: change la couleur pour l'erreur
+             alert('Adresse e-mail ou mot de passe incorrect');
         }
     });
 });
