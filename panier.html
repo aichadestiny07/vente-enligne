@@ -1,20 +1,246 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DBSE-ONLINE</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre Panier - DBSE-ONLINE</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <style>
+        /* Styles spécifiques au panier pour une meilleure lisibilité */
+        #cart-container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #cart-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-name {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .cart-item-price, .cart-item-quantity {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .cart-item-actions button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart-item-actions button:hover {
+            background-color: #cc0000;
+        }
+
+        #cart-summary {
+            margin-top: 30px;
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        #checkout-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #checkout-button:hover {
+            background-color: #218838;
+        }
+
+        #empty-cart-message {
+            text-align: center;
+            font-style: italic;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-    <footer>
+
+    <header>
+        <div class="logo">
+            <h1><span>DBSE</span>ONLINE</h1>
+        </div>
+       <nav>
+      <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+		  
+
+		 <li class="nav-item px-3 dropdown">
+                  <a class="nav-link p-0 dropdown-toggle text-center " data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">Parfums</a>
+                  <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow">
+                    <li><a href="parfumsHommes.html" class="dropdown-item ">Parfums Hommes </a>
+                    </li>
+                    <li><a href="parfumsFemmes.html" class="dropdown-item ">Parfums Femmes </a></li>
+		  		</ul>
+		   </li>
+        <li><a href="contact.html">Contactez-nous</a></li>
+        <li><a href="connexion.html" class="login_btn">LOGIN</a></li>
+  
+      <ul class="actions">
+        <li><a href="panier.html">🛒<span id="cart-item-count" style="background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.8em; vertical-align: super; display: none;">0</span></a></li>
+      </ul>
+    </nav>
+    </header>
+
+    <main>
+        <section id="cart-container">
+            <h2>Votre Panier</h2>
+            <ul id="cart-items">
+                </ul>
+            <p id="empty-cart-message" style="display: none;">Votre panier est vide.</p>
+            <div id="cart-summary">
+                Total: <span id="cart-total">0$</span>
+            </div>
+            <button id="checkout-button">Valider la commande</button>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItemsList = document.getElementById('cart-items');
+            const cartTotalSpan = document.getElementById('cart-total');
+            const emptyCartMessage = document.getElementById('empty-cart-message');
+            const cartItemCountSpan = document.getElementById('cart-item-count'); // Pour le compteur du header
+            const checkoutButton = document.getElementById('checkout-button');
+
+            // Fonction pour charger le panier depuis le LocalStorage
+            function getCart() {
+                const cart = localStorage.getItem('cart');
+                return cart ? JSON.parse(cart) : [];
+            }
+
+            // Fonction pour sauvegarder le panier dans le LocalStorage
+            function saveCart(cart) {
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+
+            // Fonction pour mettre à jour le compteur d'articles dans le header (copie de script.js)
+            function updateCartItemCount() {
+                const cart = getCart();
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+                if (totalItems > 0) {
+                    cartItemCountSpan.textContent = totalItems;
+                    cartItemCountSpan.style.display = 'inline';
+                } else {
+                    cartItemCountSpan.style.display = 'none';
+                }
+            }
+
+            // Fonction pour afficher les articles du panier
+            function renderCart() {
+                const cart = getCart();
+                cartItemsList.innerHTML = ''; // Vider la liste avant de la remplir
+
+                let total = 0;
+
+                if (cart.length === 0) {
+                    emptyCartMessage.style.display = 'block';
+                    checkoutButton.disabled = true; // Désactiver le bouton de validation
+                    checkoutButton.style.opacity = '0.7';
+                } else {
+                    emptyCartMessage.style.display = 'none';
+                    checkoutButton.disabled = false; // Activer le bouton de validation
+                    checkoutButton.style.opacity = '1';
+
+                    cart.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('cart-item');
+                        listItem.innerHTML = `
+                            <div class="cart-item-details">
+                                <span class="cart-item-name">${item.name}</span>
+                                <p class="cart-item-price">${item.price}$ x <span class="cart-item-quantity">${item.quantity}</span></p>
+                            </div>
+                            <div class="cart-item-actions">
+                                <button data-name="${item.name}" class="remove-item">Supprimer</button>
+                            </div>
+                        `;
+                        cartItemsList.appendChild(listItem);
+                        total += item.price * item.quantity;
+                    });
+                }
+                cartTotalSpan.textContent = `${total.toFixed(2)}$`; // Afficher le total avec 2 décimales
+                updateCartItemCount(); // Mettre à jour le compteur du header aussi sur la page panier
+            }
+
+            // Gérer la suppression d'un article
+            cartItemsList.addEventListener('click', (event) => {
+                if (event.target.classList.contains('remove-item')) {
+                    const productNameToRemove = event.target.dataset.name;
+                    let cart = getCart();
+
+                    // Filtrer le panier pour retirer l'article
+                    cart = cart.filter(item => item.name !== productNameToRemove);
+
+                    saveCart(cart);
+                    renderCart(); // Re-render le panier après suppression
+                }
+            });
+
+            // Gérer la validation de la commande
+            checkoutButton.addEventListener('click', () => {
+                const cart = getCart();
+                if (cart.length > 0) {
+                    alert('Votre commande a été validée ! Merci pour votre achat. (Cette fonctionnalité sera développée ultérieurement)');
+                    localStorage.removeItem('cart'); // Vider le panier après validation
+                    renderCart(); // Re-render le panier pour montrer qu'il est vide
+                } else {
+                    alert('Votre panier est vide. Veuillez ajouter des articles avant de valider votre commande.');
+                }
+            });
+
+            // Afficher le panier au chargement de la page
+            renderCart();
+        });
+    </script>
+		  <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+</body>
+	 <footer>
     <p>&copy; DBSE-ONLINE 2025 - Tous droits réservés.</p>
   </footer>
-  <script src="script.js"></script>
-</body>
 
+</html>
