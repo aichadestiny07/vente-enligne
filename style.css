@@ -397,7 +397,7 @@ div.login-container {
   justify-content: center; /* centre verticalement */
   min-height: 100vh;       /* prend toute la hauteur */
 }
-section{
+section, main{
   background-color :var(--bleu-nuit);
 }
 
