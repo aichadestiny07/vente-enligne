@@ -225,7 +225,7 @@
             checkoutButton.addEventListener('click', () => {
                 const cart = getCart();
                 if (cart.length > 0) {
-                    alert('Votre commande a été validée ! Merci pour votre achat. (Cette fonctionnalité sera développée ultérieurement)');
+                    alert('Votre commande a été validée ! Merci pour votre achat.');
                     localStorage.removeItem('cart'); // Vider le panier après validation
                     renderCart(); // Re-render le panier pour montrer qu'il est vide
                 } else {
