@@ -59,7 +59,7 @@ nav {
 .menu a,
 .actions a {
   text-decoration: none;
-  background-color: var(--bleu-nuit);
+  background-color: var(--rose-clair);
   color: var(--rose-clair);
   padding: 8px 16px;
   border-radius: 5px;
@@ -68,7 +68,7 @@ nav {
 
 .menu a:hover,
 .menu a.active {
-  background-color: var(--rose-clair);
+  background-color: var(--bleu-nuit);
   color: var(--bleu-nuit);
 }
 
