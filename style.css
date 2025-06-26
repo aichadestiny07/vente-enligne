@@ -72,6 +72,9 @@ nav {
   color: var(--bleu-nuit);
 }
 
+.dropdown-menu{
+  --bs-dropdown-bg: var(--bleu-nuit);
+}
 .login_btn {
   border: 1px solid var(--rose-clair);
 }
