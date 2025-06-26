@@ -59,7 +59,7 @@ nav {
 .menu a,
 .actions a {
   text-decoration: none;
-  color: var(--bleu-nuit);
+  color: var(--rose-clair);
   padding: 8px 16px;
   border-radius: 5px;
   transition: 0.3s;
