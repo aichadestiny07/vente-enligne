@@ -421,7 +421,7 @@ div.login-container {
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
 .navbar .nav-link.active {
-  color: var(--rose-clair); /* On peut le rendre blanc pour un meilleur contraste au survol */
+  color: var(--texte-blanc: #ffffff); /* On peut le rendre blanc pour un meilleur contraste au survol */
 }
 
 /* Style du menu déroulant */
