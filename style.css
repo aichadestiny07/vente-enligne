@@ -67,7 +67,7 @@ nav {
 
 .menu a:hover,
 .menu a.active {
-  background-color: var(--rose-clair);
+  background-color: var(--bleu-nuit);
   color: var(--rose-clair);
 }
 
