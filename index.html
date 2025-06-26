@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DBSE ONLINE</title>
+  <title>Vente en ligne</title>
   <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
 <body>
 
@@ -13,23 +14,27 @@
     <div class="logo">
       <h1><span>DBSE</span>ONLINE</h1>
     </div>
-    <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-    <nav>
-      <ul class="menu" id="menu">
-        <li><a href="index.html" class="active">Accueil</a></li>
-        <li><a href="parfums.html">Parfums</a></li>
+ <nav>
+      <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+		  
+
+		 <li class="nav-item px-3 dropdown">
+                  <a class="nav-link p-0 dropdown-toggle text-center " data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">Parfums</a>
+                  <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow">
+                    <li><a href="parfumsHommes.html" class="dropdown-item ">Parfums Hommes </a>
+                    </li>
+                    <li><a href="parfumsFemmes.html" class="dropdown-item ">Parfums Femmes </a></li>
+		  		</ul>
+		   </li>
         <li><a href="contact.html">Contactez-nous</a></li>
-        <li><a href="connexion.html" class="login_btn">LOGIN</a></li>
-      </ul>
+        <li><a href="connexion.html" class="login_btn">Login</a></li>
+  
       <ul class="actions">
-        <li><a href="panier.html">🛒</a></li>
+        <li><a href="panier.html">🛒<span id="cart-item-count" style="background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.8em; vertical-align: super; display: none;">0</span></a></li>
       </ul>
     </nav>
-    
   </header>
 
   <!-- SECTION D'ACCUEIL -->
@@ -41,7 +46,7 @@
     Chez DBSE-ONLINE, le parfum n’est pas juste un accessoire, c’est une expérience sensorielle unique.  
   </p>
   <a href="parfums.html" class="btn">Découvrez nos parfums</a>
-</section>
+
 <!--SECTION PRESENTATION-->
 <form class="presentation">
   <h2>Bienvenue sur DBSE-ONLINE</h2>
@@ -62,20 +67,13 @@
     Explorez nos collections, découvrez nos nouveautés, et laissez-vous séduire par l’art du parfum avec DBSE-ONLINE... Votre référence en parfumerie en ligne.
   </p>
 </form>
-
+</form>
   <!-- FOOTER -->
-  <footer>
+ 
+	   <script src="script.js"></script>
+	  <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
+</body>
+	 <footer>
     <p>&copy; DBSE-ONLINE 2025 - Tous droits réservés.</p>
   </footer>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DBSE ONLINE</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-
-</head>
-</body>
 </html>
