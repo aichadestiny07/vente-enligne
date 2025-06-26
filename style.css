@@ -408,20 +408,20 @@ div.login-container {
 
 /* Couleur de fond de la barre de navigation */
 .navbar {
-  background-color: #0A192F; /* Un beau "bleu de nuit" foncé */
+  background-color: var(--bleu-nuit);/* Un beau "bleu de nuit" foncé */
 }
 
 /* Couleur du texte pour le logo et les liens principaux */
 .navbar .navbar-brand,
 .navbar .nav-link {
-  color: #FFD1DC; /* Rose clair */
+  color: var(--rose-clair); /* Rose clair */
 }
 
 /* Couleur du texte quand on passe la souris sur un lien ou qu'il est actif */
 .navbar .nav-link:hover,
 .navbar .nav-link:focus,
 .navbar .nav-link.active {
-  color: #FFFFFF; /* On peut le rendre blanc pour un meilleur contraste au survol */
+  color: var(--rose-clair); /* On peut le rendre blanc pour un meilleur contraste au survol */
 }
 
 /* Style du menu déroulant */
