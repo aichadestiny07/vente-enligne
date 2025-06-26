@@ -99,7 +99,7 @@ nav {
 }
 
 .accueil .btn {
-  background-color: var(--rose-clair);
+  background-color: var(--bleu-nuit);
   color: var(--bleu-nuit);
   padding: 12px 30px;
   border: none;
@@ -110,7 +110,7 @@ nav {
 }
 
 .accueil .btn:hover {
-  background-color: #ffffff;
+  background-color: var(--bleu-nuit);
   color: var(--bleu-nuit);
 }
 
