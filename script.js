@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = passwordInput.value;
 
         // Vérification des identifiants
-        if (email === 'aichadestiny@gmail.com' && password === 'fasi2025') {
+        if (email === 'aichadestiny07@gmail.com' && password === 'fasi2025') {
             messageConnexion.textContent = 'Vous êtes connecté !';
             messageConnexion.style.color = 'green'; // Optionnel: change la couleur pour le succès
             // Ici, vous pouvez rediriger l'utilisateur ou effectuer d'autres actions après une connexion réussie
