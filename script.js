@@ -73,11 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = passwordInput.value;
 
         // Vérification des identifiants
-        if (email === 'fabricekelaw@icloud.com' && password === '12345') {
+        if (email === 'aichadestiny@gmail.com' && password === 'fasi2025') {
             messageConnexion.textContent = 'Vous êtes connecté !';
             messageConnexion.style.color = 'green'; // Optionnel: change la couleur pour le succès
             // Ici, vous pouvez rediriger l'utilisateur ou effectuer d'autres actions après une connexion réussie
-            // Exemple de redirection: window.location.href = 'dashboard.html';
+            window.location.href = 'panier.html';
         } else {
             messageConnexion.textContent = 'Adresse e-mail ou mot de passe incorrect.';
             messageConnexion.style.color = 'red'; // Optionnel: change la couleur pour l'erreur
