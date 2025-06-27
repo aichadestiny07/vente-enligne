@@ -16,72 +16,74 @@
 /* BODY */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bleu-nuit);
-  color: var(--rose-clair);
+  background-color: var(--bleu-nuit); /* Fond bleu de nuit */
+  color: var(--rose-clair);           /* Texte rose clair */
   line-height: 1.6;
 }
 
-/* NAVBAR */
-.navbar {
+/* HEADER */
+header {
   background-color: var(--bleu-nuit);
-}
-
-.navbar .navbar-brand,
-.navbar .nav-link {
   color: var(--rose-clair);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link:focus,
-.navbar .nav-link.active {
-  color: var(--texte-blanc);
-}
-
-.dropdown-menu {
-  background-color: #0A192F;
-  border: 1px solid #FFD1DC;
-}
-
-.dropdown-item {
-  color: #FFD1DC;
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus {
-  color: #0A192F;
-  background-color: #FFD1DC;
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 209, 220, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* BUTTON STYLE */
-.btn-primary {
-  background-color: #FFD1DC;
-  border-color: #FFD1DC;
-  color: #0A192F;
+.logo h1 {
+  font-size: 30px;
   font-weight: bold;
 }
 
-.btn-primary:hover {
-  background-color: #FFFFFF;
-  border-color: #FFFFFF;
-  color: #0A192F;
+.logo h1 span {
+  color: var(--rose-clair); /* "LUXE" en rose clair */
 }
 
-.btn-outline-light {
-  border-color: #FFD1DC;
-  color: #FFD1DC;
+.logo h1 {
+  color: var(--texte-blanc); /* "DESTINY" en blanc pour contraste */
 }
 
-.btn-outline-light:hover {
-  background-color: #FFD1DC;
-  color: #0A192F;
+nav {
+  display: flex;
+  align-items: center;
 }
 
-/* ACCUEIL */
+.menu,
+.actions {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.menu a,
+.actions a {
+  text-decoration: none;
+  color: var(--rose-clair);
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.menu a:hover,
+.menu a.active {
+  background-color: var(--rose-clair);
+  color: var(--bleu-nuit);
+}
+
+.login_btn {
+  border: 1px solid var(--rose-clair);
+}
+
+.login_btn:hover {
+  background-color: var(--rose-clair);
+  color: var(--bleu-nuit);
+}
+
+/* SECTION ACCUEIL */
 .accueil {
+  background-color: var(--bleu-nuit);
+  color: var(--rose-clair);
   padding: 100px 30px;
   text-align: center;
 }
@@ -102,12 +104,13 @@ body {
   padding: 12px 30px;
   border: none;
   border-radius: 30px;
+  text-decoration: none;
   font-weight: bold;
   transition: 0.3s;
 }
 
 .accueil .btn:hover {
-  background-color: #fff;
+  background-color: #ffffff;
   color: var(--bleu-nuit);
 }
 
@@ -121,6 +124,7 @@ body {
 }
 
 .presentation h2 {
+  color: var(--rose-clair);
   text-align: center;
   margin-bottom: 20px;
 }
@@ -128,18 +132,61 @@ body {
 .presentation p {
   font-size: 17px;
   margin-bottom: 15px;
+  color: var(--rose-clair);
 }
 
-/* PARFUM GRID */
+/* SECTION PARFUM */
+.parfum {
+  padding: 60px 20px;
+  background-color: var(--bleu-nuit);
+  text-align: center;
+  color: var(--rose-clair);
+}
+
+.titre-parfums {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  color: var(--rose-clair);
+}
+
+.parfum h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--rose-clair);
+}
+
+.parfum h3 {
+  color: var(--gris-texte);
+  margin-bottom: 20px;
+}
+
+.parfum a {
+  color: var(--rose-clair);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.parfum img {
+  margin-top: 25px;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+/* GRILLE DE PARFUMS */
 .parfum-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
   padding: 40px 30px;
   justify-items: center;
+  background-color: var(--bleu-nuit);
 }
 
-/* PARFUM CARD */
+/* CARTE INDIVIDUELLE DE PARFUM */
 .parfum-card {
   background-color: #222845;
   border-radius: 20px;
@@ -164,6 +211,7 @@ body {
   margin-bottom: 15px;
 }
 
+/* NOM ET PRIX */
 .parfum-card span {
   display: block;
   margin-bottom: 10px;
@@ -171,12 +219,15 @@ body {
   font-weight: bold;
 }
 
+/* PRIX SPÉCIFIQUE */
 .parfum-card .prix {
   color: var(--gris-texte);
   font-size: 16px;
 }
 
+/* BOUTON PANIER */
 .parfum-card .btn {
+  display: inline-block;
   margin-top: 10px;
   background-color: var(--rose-clair);
   color: var(--bleu-nuit);
@@ -192,8 +243,13 @@ body {
   background-color: #ffffff;
   color: var(--bleu-nuit);
 }
+.arrow {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
 
-/* FORMULAIRE CONNEXION / INSCRIPTION */
+/* STYLE DU FORMULAIRE */
 .login-container form {
   display: flex;
   flex-direction: column;
@@ -204,12 +260,12 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   width: 100%;
   max-width: 400px;
-  margin: auto;
 }
 
 .login-container label {
   text-align: center;
   font-weight: bold;
+  color: var(--rose-clair);
 }
 
 .login-container input {
@@ -225,6 +281,7 @@ body {
   border-color: #ffffff;
 }
 
+/* BOUTON DE CONNEXION */
 .login-container button {
   background-color: var(--rose-clair);
   color: var(--bleu-nuit);
@@ -241,10 +298,10 @@ body {
   color: var(--bleu-nuit);
 }
 
+/* LIEN VERS INSCRIPTION */
 .signup-link {
   margin-top: 15px;
   font-size: 14px;
-  text-align: center;
 }
 
 .signup-link a {
@@ -252,19 +309,23 @@ body {
   text-decoration: underline;
 }
 
-/* HERO */
+/* SECTION HERO */
 .hero {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 50px 20px;
+  background-color: var(--bleu-nuit);
+  color: var(--rose-clair);
 }
 
+/* TITRE EN HAUT DE PAGE */
 .hero h2 {
   font-size: 32px;
   margin-bottom: 10px;
   text-align: center;
+  color: var(--rose-clair);
 }
 
 .hero p {
@@ -273,7 +334,18 @@ body {
   margin-bottom: 30px;
 }
 
-/* FORM */
+/* CONTENEUR DU FORMULAIRE */
+.form-wrapper {
+  background-color: #1f2645;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* FORMULAIRE */
 form {
   display: flex;
   flex-direction: column;
@@ -313,6 +385,16 @@ form button:hover {
   background-color: #fff;
   color: var(--bleu-nuit);
 }
+/* CENTRER LA PAGE DE CONNEXION / INSCRIPTION */
+main.login-container,
+div.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centre horizontalement */
+  justify-content: center; /* centre verticalement */
+  min-height: 100vh;       /* prend toute la hauteur */
+}
+
 
 /* FOOTER */
 footer {
