@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DBSE-ONLINE</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
   <style type="text/css">
   .titre-parfums {
     font-family: Cambria, Hoefler Text, Liberation Serif, Times, Times New Roman, serif;
@@ -33,46 +32,30 @@
 
   <!-- HEADER -->
   <header>
-         <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
+         <nav class="navbar">
+      <div class="nav-container">
+        <a class="logo" href="index.html">
           <span style="font-weight: bold;">DBSE</span>ONLINE
-        </a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+	</a>
+          <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li class="dropdown">
+            <a href="#">Parfums</a>
+            <ul class="dropdown-menu">
+              <li><a href="parfumsHommes.html">Parfums Hommes</a></li>
+              <li><a href="parfumsFemmes.html">Parfums Femmes</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contactez-nous</a></li>
+        </ul>
 
-	      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link "  href="index.html">Accueil</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link active dropdown-toggle" aria-current="page" href="#" id="navbarDropdownParfums" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Parfums
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownParfums">
-                <li><a class="dropdown-item" href="parfumsHommes.html">Parfums Hommes</a></li>
-                <li><a class="dropdown-item" href="parfumsFemmes.html">Parfums Femmes</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contactez-nous</a>
-            </li>
-          </ul>
-          
-          <div class="d-flex align-items-center">
-            <a  href="panier.html" class="nav-link  me-3">
-              🛒
-              <span id="cart-item-count" class="badge bg-danger rounded-pill" style="vertical-align: super; display: none;">0</span>
-            </a>
-            <a href="connexion.html" class="btn btn-primary">Login</a>
-          </div>
+        <div class="nav-actions">
+          <a href="panier.html" class="cart-icon">🛒 <span id="cart-item-count" class="badge" style="display: none;">0</span></a>
+          <a href="connexion.html" class="login-btn">Login</a>
         </div>
       </div>
     </nav>
   </header>
-
   <main>
     <section id="parfums-hommes">
 <h2 class="titre-parfums">PARFUMS HOMMES</h2>
@@ -239,7 +222,6 @@
   </main>
  
 	   <script src="script.js"></script>
-	  <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
 </body>
 	 <footer>
     <p>&copy; DBSE-ONLINE 2025 - Tous droits réservés.</p>
