@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votre Panier - DBSE-ONLINE</title>
     <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
     <style>
         /* Styles spécifiques au panier pour une meilleure lisibilité */
         #cart-container {
@@ -101,46 +100,31 @@
 <body>
 
     <header>
-         <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <span style="font-weight: bold;">DBSE</span>ONLINE
-        </a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-	      <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link "  href="index.html">Accueil</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownParfums" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Parfums
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownParfums">
-                <li><a class="dropdown-item" href="parfumsHommes.html">Parfums Hommes</a></li>
-                <li><a class="dropdown-item" href="parfumsFemmes.html">Parfums Femmes</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contactez-nous</a>
-            </li>
-          </ul>
-          
-          <div class="d-flex align-items-center">
-            <a aria-current="page" href="panier.html" class="nav-link active me-3">
-              🛒
-              <span id="cart-item-count" class="badge bg-danger rounded-pill" style="vertical-align: super; display: none;">0</span>
-            </a>
-            <a href="connexion.html" class="btn btn-primary">LOGIN</a>
-          </div>
+        <div class="logo">
+            <h1><span>DBSE</span>ONLINE</h1>
         </div>
-      </div>
-    </nav>
-  </header>
+       <nav>
+      <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+		  
 
+		 <li class="nav-item px-3 dropdown">
+                  <a class="nav-link p-0 dropdown-toggle text-center " data-bs-toggle="dropdown" href="#" role="button"
+                    aria-expanded="false">Parfums</a>
+                  <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow">
+                    <li><a href="hommes.html" class="dropdown-item ">Parfums Hommes </a>
+                    </li>
+                    <li><a href="femmes.html" class="dropdown-item ">Parfums Femmes </a></li>
+		  		</ul>
+		   </li>
+        <li><a href="contact.html">Contactez-nous</a></li>
+        <li><a href="connexion.html" class="login_btn">LOGIN</a></li>
+  
+      <ul class="actions">
+        <li><a href="panier.html">🛒<span id="cart-item-count" style="background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.8em; vertical-align: super; display: none;">0</span></a></li>
+      </ul>
+    </nav>
+    </header>
 
     <main>
         <section id="cart-container">
@@ -240,7 +224,7 @@
             checkoutButton.addEventListener('click', () => {
                 const cart = getCart();
                 if (cart.length > 0) {
-                    alert('Votre commande a été validée ! Merci pour votre achat.');
+                    alert('Votre commande a été validée ! Merci pour votre achat. (Cette fonctionnalité sera développée ultérieurement)');
                     localStorage.removeItem('cart'); // Vider le panier après validation
                     renderCart(); // Re-render le panier pour montrer qu'il est vide
                 } else {
@@ -252,7 +236,6 @@
             renderCart();
         });
     </script>
-		  <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
 </body>
 	 <footer>
     <p>&copy; DBSE-ONLINE 2025 - Tous droits réservés.</p>

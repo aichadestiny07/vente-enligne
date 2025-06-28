@@ -16,8 +16,8 @@
 /* BODY */
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: var(--bleu-nuit); /* Fond bleu de nuit */
-  color: var(--rose-clair);           /* Texte rose clair */
+  background-color: var(--bleu-nuit);
+  color: var(--rose-clair);
   line-height: 1.6;
 }
 
@@ -34,14 +34,11 @@ header {
 .logo h1 {
   font-size: 30px;
   font-weight: bold;
+  color: var(--texte-blanc);
 }
 
 .logo h1 span {
-  color: var(--rose-clair); /* "LUXE" en rose clair */
-}
-
-.logo h1 {
-  color: var(--texte-blanc); /* "DESTINY" en blanc pour contraste */
+  color: var(--rose-clair);
 }
 
 nav {
@@ -211,7 +208,6 @@ nav {
   margin-bottom: 15px;
 }
 
-/* NOM ET PRIX */
 .parfum-card span {
   display: block;
   margin-bottom: 10px;
@@ -219,13 +215,11 @@ nav {
   font-weight: bold;
 }
 
-/* PRIX SPÉCIFIQUE */
 .parfum-card .prix {
   color: var(--gris-texte);
   font-size: 16px;
 }
 
-/* BOUTON PANIER */
 .parfum-card .btn {
   display: inline-block;
   margin-top: 10px;
@@ -243,6 +237,7 @@ nav {
   background-color: #ffffff;
   color: var(--bleu-nuit);
 }
+
 .arrow {
   display: inline-block;
   margin-left: 5px;
@@ -281,7 +276,6 @@ nav {
   border-color: #ffffff;
 }
 
-/* BOUTON DE CONNEXION */
 .login-container button {
   background-color: var(--rose-clair);
   color: var(--bleu-nuit);
@@ -298,7 +292,6 @@ nav {
   color: var(--bleu-nuit);
 }
 
-/* LIEN VERS INSCRIPTION */
 .signup-link {
   margin-top: 15px;
   font-size: 14px;
@@ -320,7 +313,6 @@ nav {
   color: var(--rose-clair);
 }
 
-/* TITRE EN HAUT DE PAGE */
 .hero h2 {
   font-size: 32px;
   margin-bottom: 10px;
@@ -334,7 +326,6 @@ nav {
   margin-bottom: 30px;
 }
 
-/* CONTENEUR DU FORMULAIRE */
 .form-wrapper {
   background-color: #1f2645;
   padding: 30px 25px;
@@ -345,7 +336,6 @@ nav {
   margin: 0 auto;
 }
 
-/* FORMULAIRE */
 form {
   display: flex;
   flex-direction: column;
@@ -385,16 +375,99 @@ form button:hover {
   background-color: #fff;
   color: var(--bleu-nuit);
 }
+
 /* CENTRER LA PAGE DE CONNEXION / INSCRIPTION */
 main.login-container,
 div.login-container {
   display: flex;
   flex-direction: column;
-  align-items: center;     /* centre horizontalement */
-  justify-content: center; /* centre verticalement */
-  min-height: 100vh;       /* prend toute la hauteur */
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+  padding: 40px 20px;
 }
 
+/* ... ton code déjà bien complet ci-dessus ... */
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: var(--rose-clair);
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+/* Dropdown sous-menu */
+.menu li {
+  position: relative;
+}
+
+.menu li ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  background-color: var(--bleu-nuit);
+  padding: 0;
+  border-radius: 5px;
+}
+
+.menu li:hover > ul {
+  display: flex;
+}
+
+.menu li ul li a {
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 30px;
+    background-color: var(--bleu-nuit);
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu li ul {
+    position: static;
+  }
+
+  .menu li:hover > ul {
+    display: none;
+  }
+
+  .menu li.open > ul {
+    display: flex;
+  }
+}
 
 /* FOOTER */
 footer {

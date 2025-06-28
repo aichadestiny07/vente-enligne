@@ -55,34 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mettre à jour le compteur au chargement de la page
     updateCartItemCount();
 });
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const formConnexion = document.getElementById('form-connexion');
-    const emailInput = document.getElementById('email');
-    const passwordInput = document.getElementById('password');
-    const messageConnexion = document.getElementById('message-connexion');
-
-    formConnexion.addEventListener('submit', function(event) {
-        // Empêche la soumission normale du formulaire
-        event.preventDefault();
-
-        const email = emailInput.value;
-        const password = passwordInput.value;
-
-        // Vérification des identifiants
-        if (email === 'aichadestiny07@gmail.com' && password === 'fasi2025') {
-            messageConnexion.textContent = 'Vous êtes connecté !';
-            messageConnexion.style.color = 'green'; // Optionnel: change la couleur pour le succès
-            // Ici, vous pouvez rediriger l'utilisateur ou effectuer d'autres actions après une connexion réussie
-            alert('L"Vous êtes connecté avec succès');
-            window.location.href = 'panier.html';
-        } else {
-            messageConnexion.textContent = 'Adresse e-mail ou mot de passe incorrect.';
-            messageConnexion.style.color = 'red'; // Optionnel: change la couleur pour l'erreur
-             alert('Adresse e-mail ou mot de passe incorrect');
-        }
-    });
+const hamburger = document.getElementById('hamburger');
+const nav = document.querySelector('nav');
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('active');
 });
+
+// Gestion des sous-menus sur mobile
+const dropdownParents = document.querySelectorAll('.menu li');
+
+dropdownParents.forEach(parent => {
+  parent.addEventListener('click', (e) => {
+    if (parent.querySelector('ul') && e.target.tagName !== 'A') {
+      e.preventDefault(); 
+      parent.classList.toggle('open');
+    }
+  });
+});
+

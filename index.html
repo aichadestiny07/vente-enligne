@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vente en ligne</title>
+  <title>DBSE ONLINE</title>
   <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
 <body>
 
@@ -14,66 +13,70 @@
     <div class="logo">
       <h1><span>DBSE</span>ONLINE</h1>
     </div>
- <nav>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
       <ul class="menu">
-        <li><a href="index.html">Accueil</a></li>
-		  
-
-		 <li class="nav-item px-3 dropdown" background="red">
-                  <a class="nav-link p-0 dropdown-toggle text-center " data-bs-toggle="dropdown" href="#" role="button"
-                    aria-expanded="false">Parfums</a>
-                  <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow">
-                    <li><a href="parfumsHommes.html" class="dropdown-item ">Parfums Hommes </a>
-                    </li>
-                    <li><a href="parfumsFemmes.html" class="dropdown-item ">Parfums Femmes </a></li>
-		  		</ul>
-		   </li>
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li class="dropdown">
+          <a href="#">Parfums▼</a>
+          <ul class="dropdown-content">
+            <li><a href="hommes.html">Parfums Hommes</a></li>
+            <li><a href="femmes.html">Parfums Femmes</a></li>
+          </ul>
+        </li>
         <li><a href="contact.html">Contactez-nous</a></li>
-        <li><a href="connexion.html" class="login_btn">Login</a></li>
-  
-      <ul class="actions">
-        <li><a href="panier.html">🛒<span id="cart-item-count" style="background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.8em; vertical-align: super; display: none;">0</span></a></li>
+        <li><a href="connexion.html">Login</a></li>
+        <li>
+          <a href="panier.html">🛒
+            <span id="cart-item-count" style="background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.8em; vertical-align: super; display: none;">0</span>
+          </a>
+        </li>
       </ul>
     </nav>
   </header>
 
   <!-- SECTION D'ACCUEIL -->
   <section class="accueil">
-  <h1>Bienvenue chez DBSE-ONLINE</h1>
-  <p><strong>L'art du parfum à portée de clic</strong></p>
-  <p>
-    Découvrez notre collection exclusive de parfums d’exception, sélectionnés pour révéler votre personnalité et sublimer chaque moment.  
-    Chez DBSE-ONLINE, le parfum n’est pas juste un accessoire, c’est une expérience sensorielle unique.  
-  </p>
-  <a href="parfums.html" class="btn">Découvrez nos parfums</a>
+    <h1>Bienvenue chez DBSE-ONLINE</h1>
+    <p><strong>L'art du parfum à portée de clic</strong></p>
+    <p>
+      Découvrez notre collection exclusive de parfums d’exception, sélectionnés pour révéler votre personnalité et sublimer chaque moment.  
+      Chez DBSE-ONLINE, le parfum n’est pas juste un accessoire, c’est une expérience sensorielle unique.  
+    </p>
+    <a href="parfums.html" class="btn">Découvrez nos parfums</a>
+  </section>
 
-<!--SECTION PRESENTATION-->
-<form class="presentation">
-  <h2>Bienvenue sur DBSE-ONLINE</h2>
-  <p><strong>Votre boutique en ligne dédiée aux parfums d’exception.</strong></p>
-  <p>
-    Ici, chaque fragrance est une invitation au voyage sensoriel, une signature unique qui sublime votre personnalité.
-  </p>
-  <p>
-    Notre mission est simple : vous proposer une sélection rigoureuse des meilleures marques et créations parfumées, pour tous les goûts et toutes les occasions.
-  </p>
-  <p>
-    Que vous soyez à la recherche d’un parfum frais et léger pour la journée, ou d’une fragrance plus profonde et envoûtante pour le soir, vous trouverez chez nous le produit parfait.
-  </p>
-  <p>
-    Notre site vous offre une expérience d’achat facile, sécurisée et agréable, avec un service client disponible et une livraison rapide partout à Kinshasa.
-  </p>
-  <p>
-    Explorez nos collections, découvrez nos nouveautés, et laissez-vous séduire par l’art du parfum avec DBSE-ONLINE... Votre référence en parfumerie en ligne.
-  </p>
-</form>
-</form>
+  <!-- SECTION PRESENTATION -->
+  <section class="presentation">
+    <h2>Bienvenue sur DBSE-ONLINE</h2>
+    <p><strong>Votre boutique en ligne dédiée aux parfums d’exception.</strong></p>
+    <p>
+      Ici, chaque fragrance est une invitation au voyage sensoriel, une signature unique qui sublime votre personnalité.
+    </p>
+    <p>
+      Notre mission est simple : vous proposer une sélection rigoureuse des meilleures marques et créations parfumées, pour tous les goûts et toutes les occasions.
+    </p>
+    <p>
+      Que vous soyez à la recherche d’un parfum frais et léger pour la journée, ou d’une fragrance plus profonde et envoûtante pour le soir, vous trouverez chez nous le produit parfait.
+    </p>
+    <p>
+      Notre site vous offre une expérience d’achat facile, sécurisée et agréable, avec un service client disponible et une livraison rapide partout à Kinshasa.
+    </p>
+    <p>
+      Explorez nos collections, découvrez nos nouveautés, et laissez-vous séduire par l’art du parfum avec DBSE-ONLINE... Votre référence en parfumerie en ligne.
+    </p>
+  </section>
+
   <!-- FOOTER -->
- 
-	   <script src="script.js"></script>
-	  <script type="text/javascript" src="bootstrap.bundle.min.js"></script>
-</body>
-	 <footer>
+  <footer>
     <p>&copy; DBSE-ONLINE 2025 - Tous droits réservés.</p>
   </footer>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
 </html>
