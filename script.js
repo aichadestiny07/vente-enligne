@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    
     // Mettre à jour le compteur au chargement de la page
     updateCartItemCount();
 });
@@ -65,11 +66,25 @@ hamburger.addEventListener('click', () => {
 const dropdownParents = document.querySelectorAll('.menu li');
 
 dropdownParents.forEach(parent => {
-  parent.addEventListener('click', (e) => {
-    if (parent.querySelector('ul') && e.target.tagName !== 'A') {
-      e.preventDefault(); 
-      parent.classList.toggle('open');
-    }
-  });
+  const submenu = parent.querySelector('ul');
+  const link = parent.querySelector('a');
+  const arrow = parent.querySelector('.arrow');
+
+  if (submenu) {
+    link.addEventListener('click', (e) => {
+      // Si le sous-menu est fermé, on bloque le clic pour l’ouvrir
+      if (!parent.classList.contains('open')) {
+        e.preventDefault();
+        parent.classList.toggle('open');
+
+        // Si tu as une flèche, on la tourne
+        if (arrow) {
+          arrow.style.transform = parent.classList.contains('open') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+      }
+      // Si déjà ouvert, on laisse le lien agir (ouvrir la page s'il y a href)
+    });
+  }
 });
+
 
