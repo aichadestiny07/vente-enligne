@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DBSE-ONLINE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <h1><span>DBSE</span>ONLINE</h1>
+    </div>
+        <nav>
+      <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="dropdown">
+          <a href="#">Parfums▼</a>
+          <ul class="dropdown-content">
+            <li><a href="hommes.html">Parfums Hommes</a></li>
+            <li><a href="femmes.html">Parfums Femmes</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" class="active">Contactez-nous</a></li>
+        <li><a href="connexion.html">Login</a></li>
+        <li>
+          <a href="panier.html">🛒
+            <span id="cart-item-count" style="background-color: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.8em; vertical-align: super; display: none;">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  </header>
+    <section class="hero">
+    <h2>Contactez-nous</h2>
+    <p>Vous avez une question ? Écrivez-nous !</p>
+    <div class="form-wrapper">
+  <form id="contact-form">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom">
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email">
+
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" rows="4"></textarea>
+
+    <button type="submit">Envoyer</button>
+
+    <p id="confirmation-message" style="display: none; margin-top: 15px; color: var(--rose-clair); font-weight: bold;">
+      Message envoyé !
+    </p>
+  </form>
+</div>
+
+  </section>
+  <section class="social-contact">
+  <h3>Autres moyens de contact</h3>
+  <p>Vous pouvez aussi nous écrire sur WhatsApp:</p>
+
+  <ul class="social-links">
+    <li><strong>WhatsApp :</strong> <a href="https://wa.me/243979588613" target="_blank">+243 979588613</a></li>
+  </ul>
+</section>
+
+  <footer>
+    <p>&copy; DBSE-ONLINE 2025- Tous droits réservés.</p>
+  </footer>
+  <script src="script.js"></script>
+    </body>
+</html>
